@@ -17,7 +17,7 @@ number_of_page = ceil(44/5) = 8.5 = 9
 // limit -> how many rows(records) will be showed in  a page
 $limit  = 5;
 
-// total page, ho many page will created based on number of rows
+// total_page, how many page will created based on number of rows
 $queryp = "SELECT * FROM people";
 $stmt1 = $pdo->prepare($queryp);
 $stmt1->execute();
@@ -26,6 +26,7 @@ $total_page = ceil($total_row / $limit);
 //echo $total_row;
 //echo $total_page;
 
+//for the first time, which page is shown , thats why manually set for the first time
 $page   = 1;
 if (isset($_GET['page'])) {
   $page = $_GET['page'];
